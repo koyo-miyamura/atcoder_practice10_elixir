@@ -162,4 +162,29 @@ defmodule AtcoderPractice do
     |> Enum.uniq()
     |> length
   end
+
+  @doc """
+    ## Examples
+
+      iex> AtcoderPractice.otoshidama(9,45000)
+      {0,9,0}
+
+      iex> AtcoderPractice.otoshidama(20,196000)
+      {-1,-1,-1}
+
+      iex> AtcoderPractice.otoshidama(1000,1234000)
+      {2,54,944}
+
+      iex> AtcoderPractice.otoshidama(2000,20000000)
+      {2000,0,0}
+
+  """
+  def otoshidama(n, total) do
+    for i <- 0..n,
+        j <- 0..(n - i) do
+      {i, j, n - i - j}
+    end
+    |> Enum.filter(fn {i, j, k} -> i * 10000 + j * 5000 + k * 1000 == total end)
+    |> Enum.at(0, {-1, -1, -1})
+  end
 end
