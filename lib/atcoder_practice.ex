@@ -121,4 +121,45 @@ defmodule AtcoderPractice do
     |> Enum.map(&String.to_integer/1)
     |> Enum.sum()
   end
+
+  @doc """
+    ## Examples
+
+      iex> AtcoderPractice.card_game_for_two([3,1])
+      2
+
+      iex> AtcoderPractice.card_game_for_two([2,7,4])
+      5
+
+      iex> AtcoderPractice.card_game_for_two([20,18,2,18])
+      18
+
+  """
+  def card_game_for_two(card_list) do
+    sorted_card_dsc = card_list |> Enum.sort(&(&1 >= &2))
+    alice_sum = sorted_card_dsc |> Enum.take_every(2) |> Enum.sum()
+    bob_sum = sorted_card_dsc |> Enum.drop_every(2) |> Enum.sum()
+
+    alice_sum - bob_sum
+  end
+
+  @doc """
+    ## Examples
+
+      iex> AtcoderPractice.kagami_mochi([10,8,8,6])
+      3
+
+      iex> AtcoderPractice.kagami_mochi([15,15,15])
+      1
+
+      iex> AtcoderPractice.kagami_mochi([50,30,50,100,50,80,30])
+      4
+
+
+  """
+  def kagami_mochi(mochi_list) do
+    mochi_list
+    |> Enum.uniq()
+    |> length
+  end
 end
