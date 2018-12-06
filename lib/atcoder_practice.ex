@@ -214,4 +214,33 @@ defmodule AtcoderPractice do
       true -> :NO
     end
   end
+
+  @doc """
+    ## Examples
+
+      iex> AtcoderPractice.traveling([[3,1,2], [6,1,1]])
+      :Yes
+
+      iex> AtcoderPractice.traveling([[2,100,100]])
+      :No
+
+      iex> AtcoderPractice.traveling([[5,1,1], [100,1,1]])
+      :No
+
+      iex> AtcoderPractice.traveling([[100,100,0], [102,0,0]])
+      :No
+
+  """
+  def traveling(list) do
+    # [[dt1, dist1], [dt2, dist2], ...] リストを作る
+    Enum.map_reduce(list, [0, 0, 0], fn [t2, x2, y2], [t1, x1, y1] ->
+      {[t2 - t1, abs(x2 - x1) + abs(y2 - y1)], [t2, x2, y2]}
+    end)
+    |> elem(0)
+    |> Enum.all?(fn [dt, dist] -> dt >= dist and rem(dist, 2) == rem(dt, 2) end)
+    |> case do
+      true -> :Yes
+      _ -> :No
+    end
+  end
 end
