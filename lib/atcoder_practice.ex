@@ -187,4 +187,31 @@ defmodule AtcoderPractice do
     |> Enum.filter(fn {i, j, k} -> i * 10000 + j * 5000 + k * 1000 == total end)
     |> Enum.at(0, {-1, -1, -1})
   end
+
+  @doc """
+    ## Examples
+
+      iex> AtcoderPractice.day_dream("erasedream")
+      :YES
+
+      iex> AtcoderPractice.day_dream("dreameraser")
+      :YES
+
+      iex> AtcoderPractice.day_dream("dreamerasererasedreamereraser")
+      :YES
+
+      iex> AtcoderPractice.day_dream("dreamerer")
+      :NO
+
+  """
+  def day_dream(s) do
+    cond do
+      Regex.match?(~r/dream$/, s) -> day_dream(String.slice(s, 0..-6))
+      Regex.match?(~r/dreamer$/, s) -> day_dream(String.slice(s, 0..-8))
+      Regex.match?(~r/erase$/, s) -> day_dream(String.slice(s, 0..-6))
+      Regex.match?(~r/eraser$/, s) -> day_dream(String.slice(s, 0..-7))
+      s == "" -> :YES
+      true -> :NO
+    end
+  end
 end
