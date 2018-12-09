@@ -23,7 +23,7 @@ defmodule AtcoderPractice do
   end
 
   @doc """
-    ## Examples
+  ## Examples
 
       iex> AtcoderPractice.placing_marbles("101")
       2
@@ -45,7 +45,7 @@ defmodule AtcoderPractice do
   end
 
   @doc """
-    ## Examples
+  ## Examples
 
       iex> AtcoderPractice.shift_only("8 12 40")
       2
@@ -77,7 +77,7 @@ defmodule AtcoderPractice do
   end
 
   @doc """
-    ## Examples
+  ## Examples
 
       iex> AtcoderPractice.coins(2,2,2,100)
       2
@@ -98,7 +98,7 @@ defmodule AtcoderPractice do
   end
 
   @doc """
-    ## Examples
+  ## Examples
 
       iex> AtcoderPractice.some_sums(20,2,5)
       84
@@ -123,7 +123,7 @@ defmodule AtcoderPractice do
   end
 
   @doc """
-    ## Examples
+  ## Examples
 
       iex> AtcoderPractice.card_game_for_two([3,1])
       2
@@ -144,7 +144,7 @@ defmodule AtcoderPractice do
   end
 
   @doc """
-    ## Examples
+  ## Examples
 
       iex> AtcoderPractice.kagami_mochi([10,8,8,6])
       3
@@ -164,7 +164,7 @@ defmodule AtcoderPractice do
   end
 
   @doc """
-    ## Examples
+  ## Examples
 
       iex> AtcoderPractice.otoshidama(9,45000)
       {0,9,0}
@@ -189,7 +189,7 @@ defmodule AtcoderPractice do
   end
 
   @doc """
-    ## Examples
+  ## Examples
 
       iex> AtcoderPractice.day_dream("erasedream")
       :YES
@@ -216,7 +216,7 @@ defmodule AtcoderPractice do
   end
 
   @doc """
-    ## Examples
+  ## Examples
 
       iex> AtcoderPractice.traveling([[3,1,2], [6,1,1]])
       :Yes
